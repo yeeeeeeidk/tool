@@ -2,12 +2,15 @@
 
 # Function to generate a random password
 generate_password() {
+    clear
     echo "Generating a random password..."
     pwgen -s 14 1
+    read -p "Press Enter to return to the main menu..."
 }
 
 # Function to check internet connectivity
 check_internet() {
+    clear
     echo "Checking internet connectivity..."
     ping -c 1 google.com &> /dev/null
     if [ $? -eq 0 ]; then
@@ -15,10 +18,12 @@ check_internet() {
     else
         echo "Internet is not reachable."
     fi
+    read -p "Press Enter to return to the main menu..."
 }
 
 # Function to display system information
 system_info() {
+    clear
     echo "Displaying system information..."
     uname -a
     echo "CPU Info:"
@@ -27,10 +32,12 @@ system_info() {
     free -h
     echo "Disk Usage:"
     df -h
+    read -p "Press Enter to return to the main menu..."
 }
 
 # Main menu
 while true; do
+    clear
     echo "Multi-Tool Menu:"
     echo "1. Generate Random Password"
     echo "2. Check Internet Connectivity"
